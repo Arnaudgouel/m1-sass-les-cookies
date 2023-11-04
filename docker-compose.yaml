@@ -1,0 +1,5 @@
+services:
+  sass:
+    build: .
+    volumes:
+      - .:/app
