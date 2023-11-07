@@ -1,7 +1,7 @@
 //variables
 $green-light: #60d390;
 $green-dark: #237e49;
-$wMax-mobile: 767px;
+$wMax-mobile: 768px;
 //imports
 @import "components";
 /*************************
@@ -23,6 +23,9 @@ a {
 
 .container {
 	width: 80%;
+	@media (max-width: $wMax-mobile) {
+			width: 90%;
+		}
 	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
@@ -57,6 +60,7 @@ header {
 		}
 		ul {
 			display: flex;
+			align-items: center;
 			gap: 30px;
 			list-style: none;
 			a {
@@ -104,4 +108,91 @@ header {
 			flex-direction: column;
 		}
 	}
+}
+
+#concept {
+	text-align: center;
+	margin-top: 60px;
+	@extend .container;
+
+	article {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 50px;
+		text-align: left;
+
+		@media (max-width: $wMax-mobile) {
+			text-align: center;
+		}
+
+		position: relative;
+
+		&:nth-of-type(even) {
+			flex-direction: row-reverse;
+		}
+
+		div {
+
+			&:first-of-type {
+				width: 33%;
+				text-align: center;
+			}
+
+			&:last-of-type {
+				width: 66%;
+			}
+
+			@media (max-width: $wMax-mobile) {
+				width: 100%;
+
+				&:first-of-type {
+					width: 100%;
+				}
+
+				&:last-of-type {
+					width: 100%;
+				}
+			}
+		}
+
+		img {
+			width: 170px;
+			transition: transform 1s ease-in-out;
+			@extend .img-square, .shadow;
+
+			&:hover {
+				transform: rotate3d(0, 1, 0, 360deg);
+				transition: all 1s ease-in-out;
+			}
+		}
+	}
+}
+
+hr {
+	border: none;
+	border-top: 1px solid $green-light;
+	margin-top: 50px;
+	margin-bottom: 30px;
+	@extend .container;
+
+}
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	@extend .container;
+
+	ul {
+		padding: 0;
+
+		li {
+			list-style: none;
+			line-height: 26px;
+
+			a {
+				color: inherit;
+			}
+		}
+	}
+
 }
