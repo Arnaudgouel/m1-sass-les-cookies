@@ -10,6 +10,7 @@ services:
           ignore:
             - ./css/style.css
             - ./css/style.css.map
+            - ./git
     volumes:
       - ./css/style.css:/app/css/style.css
       - ./css/style.css.map:/app/css/style.css.map
