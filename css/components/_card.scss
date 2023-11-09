@@ -2,7 +2,7 @@
 	@extend .shadow, .radius-8px;
 	padding: 20px;
 	border-top: 3px solid $green-light;
-	transition: all 0.3s ease;
+	transition: transform 0.3s ease;
 	background-color: white;
 	cursor: pointer;
 	&:hover {

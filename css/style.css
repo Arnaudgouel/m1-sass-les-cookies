@@ -1,7 +1,7 @@
 .card {
   padding: 20px;
   border-top: 3px solid #60d390;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
   background-color: white;
   cursor: pointer;
 }
