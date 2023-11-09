@@ -1,5 +1,15 @@
 services:
   sass:
     build: .
+    command: ["sass", "--watch", "--verbose", "/app/css/style.scss", "/app/css/style.css"]
+    develop:
+      watch:
+        - path: .
+          action: sync
+          target: /app
+          ignore:
+            - ./css/style.css
+            - ./css/style.css.map
     volumes:
-      - .:/app
+      - ./css/style.css:/app/css/style.css
+      - ./css/style.css.map:/app/css/style.css.map
